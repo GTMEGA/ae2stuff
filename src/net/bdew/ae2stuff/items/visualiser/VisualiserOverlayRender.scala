@@ -144,7 +144,7 @@ object VisualiserOverlayRender extends WorldOverlayRenderer {
 
         // Labels are rendered every frame because they need to face the camera
 
-        if (mode == VisualisationModes.FULL) {
+        if (mode == VisualisationModes.FULL || mode == VisualisationModes.CHANNELS || mode == VisualisationModes.NONUM) {
           for (link <- currentLinks.links if link.channels > 0) {
             OverlayRenderHandler.renderFloatingText(link.channels.toString,
               (link.node1.x + link.node2.x) / 2D + 0.5D, (link.node1.y + link.node2.y) / 2D + 0.5D, (link.node1.z + link.node2.z) / 2D + 0.5D, 0xFFFFFF)
